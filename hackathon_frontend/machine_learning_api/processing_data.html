@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Machine Learning At Click - Training</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+</head>
+<body>
+        <header id="header" class="header">
+                <div class="container">
+                    <div class="row">
+                        <div class="six columns">
+                            <img src="img/draup_logo.png" id="logo">
+                        </div>
+                    <div>
+                        <h1 class="header-change">Machine Learning At Click</h1>
+                    </div>
+                    </div>
+                </div>
+        </header>
+        <div class="container">
+                <div id="content" class="content">
+                    <h1>Loading Data</h1>
+                    <form action="#" id="generate-names">
+                            <div class="row">
+                                <div class="six columns">
+                                    <label for="modelType">Machine Learning Model Type:</label>
+                                    <select class="u-full-width" id="modelType" onChange="myFunction()">
+                                        <option value=''>-- Select --</option>
+                                        <option value="supervised">Supervised</option>
+                                        <option value="unsupervised">Unsupervised</option>
+                                        <option value="imageRecognition">Image Recognition</option>
+                                    </select>
+                                </div>
+                            </div>
+        
+                            <div class="row">
+                            <div class="six columns">
+                                <label for="genre">Model Selection:</label>
+                                <select class="u-full-width" id="model_selection">
+                                        <!-- <option value=''>-- Select --</option>
+                                        <option value="logisticRegression">LogisticRegression</option>
+                                        <option value="linearRegression">LinearRegression</option>
+                                        <option value="linearRegression">Clustering</option> -->
+                                        <!-- <div id="model_selection"></div> -->
+                                </select> 
+                                </div>
+                            </div>
+                            <!-- <div id="genre"></div> -->
+                            <div class="row">
+                                       <label>
+                                           <input type="radio" name="level" value="standard" checked>
+                                                    Standard
+                                            </label>
+                                    </div>
+                                    <div class="row">
+                                    <div class="">
+                                        <label>
+                                        <input type="radio" name="level" value="advanced" checked>
+                                        Advanced
+                                      </label>
+                                  </div>
+                                  </div>
+                                  <!-- </div>
+                                      <label class="form-check-label">
+                                        <input class="form-check-input" type="radio" name="level" value="advanced">
+                                        Advanced
+                                      </label>
+                                  </div>
+                            </div> -->
+                            <div class="upload-btn-wrapper">
+                                    <!-- /<button class="btn">Upload a file</button> -->
+                                    <input type="file" name="myfile" id="inputFile" />
+                            </div>
+                            <!-- <div class="row">
+                                <button onclick="displayData()">Display Data</button>
+                            </div> -->
+        
+                            <div class="row">
+                            <div class="six columns">
+                                    <!-- <input class="button-primary u-full-width" type="submit" value="Generate"> -->
+                                    <input class="button-primary u-full-width" type="submit" value="Save">
+                            <div id="result"></div>
+                            </div>
+                            </div>
+                        
+                    </form> 
+        
+                    <div id="selecting_features"></div>
+        
+                </div>
+            </div>
+
+    <div class="container">
+        <div id="content" class="content">
+            <h1>Training the model</h1>
+            <form action="#" id="training-model">
+                    <div class="row">
+                        <div class="six columns">
+                            <label for="preprocessing" id="preprocessing_text">Pre-processing Text:</label>
+                            <!-- <select class="u-full-width" id="country" onChange="change_modelSelection($event)"> -->
+                                    <label class="container">Lowercase
+                                            <input type="checkbox" checked="checked">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                          <label class="container">Uppercase
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                          <label class="container">Stop Words  
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                          <label class="container">Remove Numbers  
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                          </label>
+                                          <label class="container">Unicode Decode  
+                                                <input type="checkbox">
+                                                <span class="checkmark"></span>
+                                          </label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                            <div class="six columns">
+                                <label for="preprocessing">Vector Transformation</label>
+                                        <select class="u-full-width" id="vectorizer_selection"">
+                                                <option value=''>-- Select --</option>
+                                                <option value="count_vectorizer">Count Vectorizer</option>
+                                                <option value="tf_idf_vectorizer">TF-IDF Vectorizer</option>
+                                        </select>
+                            </div>
+                        </div>
+
+
+                    <div class="row">
+                    <div class="six columns">
+                            <!-- <input class="button-primary u-full-width" type="submit" value="Generate"> -->
+                            <input class="button-primary u-full-width" type="submit" value="Train">
+                    <div id="result_training"></div>
+                    </div>
+                    </div>
+                
+            </form> 
+
+        </div>
+    </div>
+
+
+    <div class="container">
+            <div id="content" class="content">
+                <h1>Evaluation of the model</h1>
+                <form action="#" id="evaluation-model">
+    
+                        <div class="row">
+                        <div class="six columns">
+                                <!-- <input class="button-primary u-full-width" type="submit" value="Generate"> -->
+                                <input class="button-primary u-full-width" type="submit" value="Predict">
+                        <div id="result_evaluation"></div>
+                        </div>
+                        </div>
+                    
+                </form> 
+    
+                
+    
+                <div id="selecting_features"></div>
+    
+            </div>
+        </div>
+    
+    <script src="js/preprocesssing_text.js"></script>
+</body>
+</html>
